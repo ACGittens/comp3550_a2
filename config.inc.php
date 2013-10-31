@@ -2,6 +2,7 @@
 
 global $CFG;
 
+$CFG['location'] = "localhost";
 $CFG['database'] = 'comp3550_a2';
 $CFG['username'] = 'root';
 $CFG['password'] = 'demons156';
