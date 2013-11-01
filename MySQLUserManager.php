@@ -38,9 +38,9 @@ class MySQLUserManager implements UserManager
     {
         global $CFG;
         $this->mysqli = new mysqli($CFG['location'],$CFG['username'],$CFG['password'],$CFG['database']);
-        if ($mysqli->connect_errno)
+        if ($this->mysqli->connect_errno)
         {
-            echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+            echo "Failed to connect to MySQL: (" . $this->mysqli->connect_errno . ") " . $this->mysqli->connect_error;
         }
     
     
