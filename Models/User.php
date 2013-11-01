@@ -1,6 +1,6 @@
 <?php
 
-define("INVALID_ID",-1);
+define("INVALID_ID",0);
 
 class User
 {
@@ -76,6 +76,11 @@ class User
         $this->last_name = $last_name;
     }
     
+    private function set_hash( $hash )
+    {
+        $this->hash = $hash;
+    }
+    
     function set_password( $password )
     {
         $this->hash = User::$password_hasher->hash_password($password);
@@ -88,6 +93,14 @@ class User
         return $new_user;
     }
     
+    //NOT FOR PUBLIC USE
+    static function create_user( $id, $email, $hash, $first_name, $last_name )
+    {
+        $new_user = new User($email, $first_name, $last_name, null);
+        $new_user->set_id($id);
+        $new_user->set_hash($hash);
+        return $new_user;
+    }
    
     static function get_user_by_id( $id )
     {
@@ -126,6 +139,9 @@ class User
     */
     function save()
     {
+        //users id should be reassigned after the save
+        //if the user was just inserted into the database
+        //then its id should no longer be invalid
         User::$user_manager->save( $this );
     }
 }
