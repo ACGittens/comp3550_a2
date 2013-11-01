@@ -1,5 +1,7 @@
 <?php
 
+
+require_once('PasswordHasher.php');
 require_once('PasswordHash.php');
 
 class phpassPasswordHasher implements PasswordHasher
