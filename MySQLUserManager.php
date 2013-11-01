@@ -2,9 +2,9 @@
 
 <?php
 
-require('UserManager.php');
-require('config.inc.php');
-require('./Models/User.php');
+require_once('UserManager.php');
+require_once('config.inc.php');
+require_once('./Models/User.php');
 
 
 class MySQLUserManager implements UserManager
