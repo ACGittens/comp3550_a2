@@ -8,7 +8,7 @@ require_once('./Models/User.php');
 require_once('MySQLUserManager.php');
 require_once('phpassPasswordHasher.php');
 
-User::set_password_hahser( new phpassPasswordHasher );
+User::set_password_hasher( new phpassPasswordHasher );
 User::set_user_manager( new MySQLUserManager() );
 
 $u = new User("rikaard1993@hotmail.com","rikaard","hosein","testpassword");
