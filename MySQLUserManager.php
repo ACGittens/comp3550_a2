@@ -56,9 +56,9 @@ class MySQLUserManager implements UserManager
         $this->get_users_by_last_name_stmt = $this->mysqli->prepare("SELECT id,email,hash,first_name,last_name FROM users WHERE last_name=?");
         $this->get_users_by_last_name_stmt->bind_param("s",$this->last_name);
         
-        $this->get_all_stmt = $mysqli->prepare("SELECT id,email,hash,first_name,last_name FROM users");
+        $this->get_all_stmt = $this->mysqli->prepare("SELECT id,email,hash,first_name,last_name FROM users");
         
-        $this->save_stmt = $mysqli_prepare("INSERT INTO users(id,email,hash,first_name,last_name) VALUES(?,?,?,?,?) ".
+        $this->save_stmt = $this->mysqli->prepare("INSERT INTO users(id,email,hash,first_name,last_name) VALUES(?,?,?,?,?) ".
                                            "ON DUPLICATE KEY UPDATE email=VALUES(email),hash=VALUES(hash),".
                                            "first_name=VALUES(first_name),last_name=VALUES(last_name))");
         $this->save_stmt->bind_param("dssss",$this->id,$this->email,$this->hash,$this->first_name,$this->last_name);
