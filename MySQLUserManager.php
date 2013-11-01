@@ -144,7 +144,7 @@ class MySQLUserManager implements UserManager
     }   
                                            
                                            
-    public function save(User $user_obj);   
+    public function save(User $user_obj)
     {
         $this->id = $user_obj->get_id();
         $this->email = $user_obj->get_email();
