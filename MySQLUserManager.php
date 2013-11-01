@@ -34,7 +34,7 @@ class MySQLUserManager implements UserManager
     
     private $mysqli;
     
-    public __construct()
+    public function __construct()
     {
         global $CFG;
         $this->mysqli = new mysqli($CFG['location'],$CFG['username'],$CFG['password'],$CFG['database']);
