@@ -84,7 +84,7 @@ class MySQLUserManager implements UserManager
         $user_results = array();
         while( $stmt->fetch()  )
         {
-            $new_user = User::create_user( $this->result_id, $this->result_email, $this->result_hash,
+            $new_user = User::_create_user( $this->result_id, $this->result_email, $this->result_hash,
                                            $this->result_first_name, $this->result_last_name);
             
             $user_results[] = $new_user;

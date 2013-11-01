@@ -94,7 +94,7 @@ class User
     }
     
     //NOT FOR PUBLIC USE
-    static function create_user( $id, $email, $hash, $first_name, $last_name )
+    static function _create_user( $id, $email, $hash, $first_name, $last_name )
     {
         $new_user = new User($email, $first_name, $last_name, null);
         $new_user->set_id($id);
