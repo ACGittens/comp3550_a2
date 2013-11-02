@@ -30,7 +30,7 @@ class User
     {
         User::$user_manager = $user_manager;
     }
-    
+     
     function get_id()
     {
         return $this->id;
