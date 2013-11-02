@@ -15,4 +15,7 @@ $u = User::get_user_by_id(16);
 
 echo $u->print_details();
 
+echo $u->check_password("testpassword");
+echo $u->check_password("testpass");
+
 ?>

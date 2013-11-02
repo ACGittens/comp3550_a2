@@ -36,6 +36,12 @@ class User
         return $this->id;
     }        
     
+    
+    function check_password( $password )
+    {
+        return User::$password_hasher->check_password($password,$this->get_hash());
+    }
+    
     function get_email()
     {
         return $this->email;
