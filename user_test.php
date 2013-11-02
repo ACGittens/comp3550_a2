@@ -13,7 +13,6 @@ User::set_user_manager( new MySQLUserManager() );
 
 $u = User::get_user_by_email("rikaard1993@hotmail.com");
 
-echo $u->get_id();
-
+echo $u->print_details();
 
 ?>
