@@ -82,7 +82,7 @@ class MySQLUserManager implements UserManager
     }
     
                                            
-    public function create_users_from_stmt_results( $stmt )
+    private function create_users_from_stmt_results( $stmt )
     {
         $user_results = array();
         while( $stmt->fetch()  )
@@ -128,7 +128,7 @@ class MySQLUserManager implements UserManager
     {
         $this->first_name = $first_name;
         $this->get_users_by_first_name_stmt->execute();
-        $user_results = create_users_from_stmt_results( $this->get_users_by_first_name_stmt );
+        $user_results = $this->create_users_from_stmt_results( $this->get_users_by_first_name_stmt );
         return $user_results;
     }
     
@@ -138,7 +138,7 @@ class MySQLUserManager implements UserManager
     {
         $this->last_name = $last_name;
         $this->get_users_by_last_name_stmt->execute();
-        $user_results = create_users_from_stmt_results( $this->get_users_by_last_name_stmt );
+        $user_results = $this->create_users_from_stmt_results( $this->get_users_by_last_name_stmt );
         return $user_results;
     }
                              
@@ -146,7 +146,7 @@ class MySQLUserManager implements UserManager
     public function get_all()
     {
         $this->get_all_stmt->execute();
-        $user_results = create_users_from_stmt_results( $this->get_all_stmt );
+        $user_results = $this->create_users_from_stmt_results( $this->get_all_stmt );
         return $user_results;
     }   
                                            
