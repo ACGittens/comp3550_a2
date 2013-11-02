@@ -76,10 +76,11 @@ class MySQLUserManager implements UserManager
         $stmts[] = $this->get_users_by_last_name_stmt;
         $stmts[] = $this->get_all_stmt;
         
+        var_dump($stmts);
                                            
         foreach( $stmts as $stmt )
         {
-               $stmts[$stmt]->bind_result($this->result_id,$this->result_email,$this->result_hash,$this->result_first_name,$this->result_last_name);
+               $stmt->bind_result($this->result_id,$this->result_email,$this->result_hash,$this->result_first_name,$this->result_last_name);
         }
     }
     
