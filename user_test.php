@@ -14,7 +14,7 @@ User::set_user_manager( new MySQLUserManager() );
 //$u = new User("cherlton@gays.com","Cherlton","Milettes","passwords_suck");
 //$u->save();
 
-$users = User::get_users_by_first_name("Cherlton");
+$users = User::get_all();
 
 foreach($users as $user)
 {
