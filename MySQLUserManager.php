@@ -100,6 +100,9 @@ class MySQLUserManager implements UserManager
         $this->id = $id;
         $this->get_user_by_id_stmt->execute();
         $this->get_user_by_id_stmt->fetch();
+        
+        echo "Id: ".$this->id;
+        
         $new_user = User::create_user( $this->result_id, $this->result_email, $this->result_hash,
                                        $this->result_first_name, $this->result_last_name );
         return $new_user;
