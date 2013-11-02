@@ -16,8 +16,8 @@ class phpassPasswordHasher implements PasswordHasher
     public function check_password( $password, $hash )
     {
         $t_hasher = new PasswordHash(8,FALSE);
-        $phash = $t_hasher->HashPassword($password);
-        return ((strcmp($hash,$phash)== 0) ? TRUE : FALSE);
+        $res = $t_hasher->CheckPassword($password,$hash);
+        return $res;
     }
 }
 
