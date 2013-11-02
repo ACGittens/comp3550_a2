@@ -153,8 +153,8 @@ class MySQLUserManager implements UserManager
         $this->id = $user_obj->get_id();
         $this->email = $user_obj->get_email();
         $this->hash = $user_obj->get_hash();
-        $this->first_name = $user->get_first_name();
-        $this->last_name = $user->get_last_name();
+        $this->first_name = $user_obj->get_first_name();
+        $this->last_name = $user_obj->get_last_name();
         
         $this->save_stmt->execute();
     }
