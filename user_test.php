@@ -11,7 +11,7 @@ require_once('phpassPasswordHasher.php');
 User::set_password_hasher( new phpassPasswordHasher );
 User::set_user_manager( new MySQLUserManager() );
 
-$u = User::get_user_by_email("rikaard1993@hotmail.com");
+$u = User::get_user_by_id(16);
 
 echo $u->print_details();
 
