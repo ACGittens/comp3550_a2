@@ -11,7 +11,7 @@ require_once('phpassPasswordHasher.php');
 User::set_password_hasher( new phpassPasswordHasher );
 User::set_user_manager( new MySQLUserManager() );
 
-$u = new User("cherlton@gay.com","Cherlton","Milette","passwords_suck");
+$u = new User("cherlton@gays.com","Cherlton","Milettes","passwords_suck");
 $u->save();
 
 //$u = User::get_user_by_id(16);
