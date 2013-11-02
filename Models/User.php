@@ -121,13 +121,13 @@ class User
         return $user;
     }
     
-    static function get_users_by_first_name($first_name, $offset, $limit)
+    static function get_users_by_first_name($first_name)//, $offset, $limit)
     {
         $users = User::$user_manager->get_users_by_first_name( $first_name );
         return $users;
     }
     
-    static function get_users_by_last_name($last_name, $offset, $limit)
+    static function get_users_by_last_name($last_name)//, $offset, $limit)
     {
         $users = User::$user_manager->get_users_by_last_name( $last_name );
         return $users;

@@ -82,7 +82,7 @@ class MySQLUserManager implements UserManager
     }
     
                                            
-    private function create_users_from_stmt_results( $stmt )
+    public function create_users_from_stmt_results( $stmt )
     {
         $user_results = array();
         while( $stmt->fetch()  )
