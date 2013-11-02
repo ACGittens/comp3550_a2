@@ -14,10 +14,8 @@ User::set_user_manager( new MySQLUserManager() );
 $u = User::get_user_by_id(16);
 
 echo $u->print_details();
-
-echo "Result: ".$u->check_password("testpassword");
 $res = $u->check_password("testpassword");
 echo (( $res === FALSE ) ? "Password comparison failed!\n": "Password comparison success!\n");
-echo "Result: ".$u->check_password("testpass");
-
+$res = $u->check_password("testpass");
+echo (( $res === FALSE ) ? "Password comparison failed!\n": "Password comparison success!\n");
 ?>
