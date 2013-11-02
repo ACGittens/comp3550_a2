@@ -62,6 +62,8 @@ class MySQLUserManager implements UserManager
                                            "ON DUPLICATE KEY UPDATE email=VALUES(email),hash=VALUES(hash),".
                                            "first_name=VALUES(first_name),last_name=VALUES(last_name))");
         
+        if( $this->save_stmt === FALSE ) echo "FAILED TO PREPARE SAVE_STMT!\n";
+        
         var_dump($this->save_stmt);
         
         $this->save_stmt->bind_param("dssss",$this->id,$this->email,$this->hash,$this->first_name,$this->last_name);
