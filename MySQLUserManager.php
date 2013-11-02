@@ -60,7 +60,7 @@ class MySQLUserManager implements UserManager
         
         $this->save_stmt = $this->mysqli->prepare("INSERT INTO users(id,email,hash,first_name,last_name) VALUES(?,?,?,?,?) ".
                                            "ON DUPLICATE KEY UPDATE email=VALUES(email),hash=VALUES(hash),".
-                                           "first_name=VALUES(first_name),last_name=VALUES(last_name))");
+                                           "first_name=VALUES(first_name),last_name=VALUES(last_name)");
         
         if( $this->save_stmt === FALSE ) echo "FAILED TO PREPARE SAVE_STMT!\n";
         
