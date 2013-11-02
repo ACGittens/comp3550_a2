@@ -103,7 +103,7 @@ class MySQLUserManager implements UserManager
         
   
         
-        $new_user = User::create_user( $this->result_id, $this->result_email, $this->result_hash,
+        $new_user = User::_create_user( $this->result_id, $this->result_email, $this->result_hash,
                                        $this->result_first_name, $this->result_last_name );
         return $new_user;
     
@@ -118,8 +118,7 @@ class MySQLUserManager implements UserManager
         //fetching only once is fine.
         $this->get_user_by_email_stmt->fetch();
         
-              echo "Id: ".$this->result_id;
-        $new_user = User::create_user( $this->result_id, $this->result_email, $this->result_hash,
+        $new_user = User::_create_user( $this->result_id, $this->result_email, $this->result_hash,
                                       $this->result_first_name, $this->result_last_name);
         return $new_user;
     }
