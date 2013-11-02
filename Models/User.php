@@ -144,6 +144,13 @@ class User
         //then its id should no longer be invalid
         User::$user_manager->save( $this );
     }
+    
+    
+    function print_details()
+    {
+        printf("Id: %d\nEmail: %s\nHash: %s\nFirst name: %s\nLast Name: %s\n\n",
+              $this->get_id(), $this->get_email(), $this->get_hash(), $this->get_first_name(), $this->get_last_name());
+    }
 }
 
 ?>
