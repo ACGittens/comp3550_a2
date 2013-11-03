@@ -153,7 +153,9 @@ class Murder extends Model
 	{
 		Murder::$murder_manager->save($this);
 	}
-   public function test() {
+
+	
+ 	public function test() {
         var_dump(get_class_vars(__CLASS__));
     }
 }
