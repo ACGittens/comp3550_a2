@@ -13,7 +13,7 @@ Murder::set_murder_manager( new MySQLMurderManager );
 $murder_results = Murder::get_murders_by_name("jarred");
 foreach( $murder_results as $res )
 {
-	echo $res->get_details()."\n";
+	echo $res->test()."\n";
 }
 
 ?>
