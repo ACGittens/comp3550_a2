@@ -47,13 +47,13 @@ class MySQLUserManager implements UserManager
         $this->get_user_by_id_stmt = $this->mysqli->prepare("SELECT id,email,hash,first_name,last_name FROM users WHERE id=?");
         $this->get_user_by_id_stmt->bind_param("d",$this->id);
         
-        $this->get_user_by_email_stmt = $this->mysqli->prepare("SELECT id,email,hash,first_name,last_name FROM users WHERE email=?");
+        $this->get_user_by_email_stmt = $this->mysqli->prepare("SELECT id,email,hash,first_name,last_name FROM users WHERE email LIKE ?");
         $this->get_user_by_email_stmt->bind_param("s",$this->email);
         
-        $this->get_users_by_first_name_stmt = $this->mysqli->prepare("SELECT id,email,hash,first_name,last_name FROM users WHERE first_name=?");
+        $this->get_users_by_first_name_stmt = $this->mysqli->prepare("SELECT id,email,hash,first_name,last_name FROM users WHERE first_name LIKE ?");
         $this->get_users_by_first_name_stmt->bind_param("s",$this->first_name);
         
-        $this->get_users_by_last_name_stmt = $this->mysqli->prepare("SELECT id,email,hash,first_name,last_name FROM users WHERE last_name=?");
+        $this->get_users_by_last_name_stmt = $this->mysqli->prepare("SELECT id,email,hash,first_name,last_name FROM users WHERE last_name LIKE ?");
         $this->get_users_by_last_name_stmt->bind_param("s",$this->last_name);
         
         $this->get_all_stmt = $this->mysqli->prepare("SELECT id,email,hash,first_name,last_name FROM users");
