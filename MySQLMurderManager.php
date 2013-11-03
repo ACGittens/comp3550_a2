@@ -47,27 +47,27 @@ class MySQLMurderManager implements MurderManager
         }
 
         echo "SELECT".$this->columns."FROM".$table."WHERE id=?";
-        $this->get_murder_by_id_stmt = $this->mysqli->prepare("SELECT".$this->columns."FROM".$table."WHERE id=?");
+        $this->get_murder_by_id_stmt = $this->mysqli->prepare("SELECT".$this->columns."FROM".$this->table."WHERE id=?");
         $this->get_murder_by_id_stmt->bind_param("d",$this->id);
 
-        $this->get_murder_by_name_stmt = $this->mysqli->prepare("SELECT".$this->columns."FROM".$table."WHERE name=?");
+        $this->get_murder_by_name_stmt = $this->mysqli->prepare("SELECT".$this->columns."FROM".$this->table."WHERE name=?");
         $this->get_murder_by_name_stmt->bind_param("s",$this->name);
 
-        $this->get_murder_by_age_stmt = $this->mysqli->prepare("SELECT".$this->columns."FROM".$table."WHERE age=?");
+        $this->get_murder_by_age_stmt = $this->mysqli->prepare("SELECT".$this->columns."FROM".$this->table."WHERE age=?");
         $this->get_murder_by_age_stmt->bind_param("d",$this->age);
         
-        $this->get_murder_by_address_stmt = $this->mysqli->prepare("SELECT".$this->columns."FROM".$table."WHERE address=?");
+        $this->get_murder_by_address_stmt = $this->mysqli->prepare("SELECT".$this->columns."FROM".$this->table."WHERE address=?");
         $this->get_murder_by_address_stmt->bind_param("s",$this->address);
         
-        $this->get_murder_by_cause_stmt = $this->mysqli->prepare("SELECT".$this->columns."FROM".$table."WHERE cause=?");
+        $this->get_murder_by_cause_stmt = $this->mysqli->prepare("SELECT".$this->columns."FROM".$this->table."WHERE cause=?");
         $this->get_murder_by_cause_stmt->bind_param("s",$this->cause);
         
-        $this->get_murder_by_comment_stmt = $this->mysqli->prepare("SELECT".$this->columns."FROM".$table."WHERE comment=?");
+        $this->get_murder_by_comment_stmt = $this->mysqli->prepare("SELECT".$this->columns."FROM".$this->table."WHERE comment=?");
         $this->get_murder_by_comment_stmt->bind_param("s",$this->comment);
 
-        $this->get_all_stmt = $this->mysqli->prepare("SELECT".$this->columns."FROM".$table);
+        $this->get_all_stmt = $this->mysqli->prepare("SELECT".$this->columns."FROM".$this->table);
 
-		$this->save_stmt = $this->mysqli->prepare("INSERT INTO crim(".$this->columns.") VALUES(?,?,?,?,?,?) ".
+		$this->save_stmt = $this->mysqli->prepare("INSERT INTO ".$this->table."(".$this->columns.") VALUES(?,?,?,?,?,?) ".
 		                           "ON DUPLICATE KEY UPDATE name=VALUES(name),age=VALUES(age),".
 		                           "address=VALUES(address),cause=VALUES(cause),comment=VALUES(comment)");
 
