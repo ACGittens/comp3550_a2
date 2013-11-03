@@ -149,6 +149,11 @@ class Murder implements Model
 		$this->comment = $comment;
 	}
 
+	public function save()
+	{
+		Murder::$murder_manager->save($this);
+	}
+
 }
 
 ?>
