@@ -3,7 +3,7 @@
 require_once('Model.php');
 define("INVALID_ID",0);
 
-class Murder extends Model
+class Murder implements Model
 {
 	private $id;
 	private $name;
@@ -152,6 +152,17 @@ class Murder extends Model
 	public function save()
 	{
 		Murder::$murder_manager->save($this);
+	}
+
+	public function get_details()
+	{
+		$output = "";
+		$model_properties = get_object_vars($this);
+		foreach( $model_properties as $name=>$value )
+		{
+			$output .= $name.": ".$value."\n";
+		}
+		return $output;
 	}
 }
 

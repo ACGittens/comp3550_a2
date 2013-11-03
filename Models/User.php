@@ -3,7 +3,7 @@
 require_once('Model.php');
 define("INVALID_ID",0);
 
-class User extends Model
+class User implements Model
 {
     private $id;
     private $email;
@@ -20,6 +20,18 @@ class User extends Model
         $this->set_first_name($first_name);
         $this->set_last_name($last_name);
         $this->set_password($password);
+    }
+
+    
+    public function get_details()
+    {
+        $output = "";
+        $model_properties = get_object_vars($this);
+        foreach( $model_properties as $name=>$value )
+        {
+            $output .= $name.": ".$value."\n";
+        }
+        return $output;
     }
     
     static function set_password_hasher( PasswordHasher $hasher )
