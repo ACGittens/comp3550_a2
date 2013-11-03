@@ -46,7 +46,7 @@ class MySQLMurderManager implements MurderManager
             echo "Failed to connect to MySQL: (" . $this->mysqli->connect_errno . ") " . $this->mysqli->connect_error;
         }
 
-        echo "SELECT".$this->columns."FROM".$table."WHERE id=?";
+        echo "SELECT".$this->columns."FROM".$this->table."WHERE id=?";
         $this->get_murder_by_id_stmt = $this->mysqli->prepare("SELECT".$this->columns."FROM".$this->table."WHERE id=?");
         $this->get_murder_by_id_stmt->bind_param("d",$this->id);
 
