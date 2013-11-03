@@ -21,7 +21,7 @@ class MySQLUserManager implements UserManager
     //private $get_users_by_last_name_stmt_offset;
     //private $get_all_stmt_offset;
     
-    private $id;
+    private $id; 
     private $email;
     private $first_name;
     private $last_name;
