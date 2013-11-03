@@ -76,7 +76,7 @@ class Murder implements Model
 
 	public static function create_murder( $name, $age, $address, $cause, $comment )
 	{
-		$new_murder = Murder($name,$age,$address,$cause,$comment);
+		$new_murder = new Murder($name,$age,$address,$cause,$comment);
 		$new_murder->set_id(INVALID_ID);
 		return $new_murder;
 	}
