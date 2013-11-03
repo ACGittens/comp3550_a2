@@ -113,16 +113,16 @@ class MySQLMurderManager implements MurderManager
 	{
 		$this->name = $name;
 		$this->get_murder_by_name_stmt->execute();
-		$this->murder_results = $this->create_murders_from_stmt_results( $this->get_murder_by_name_stmt );
-		return $this->murder_results;
+		$murder_results = $this->create_murders_from_stmt_results( $this->get_murder_by_name_stmt );
+		return $murder_results;
 	}
 
 	public function get_murders_by_age( $age )
 	{
 		$this->age = $age;
 		$this->get_murder_by_age_stmt->execute();
-		$this->murder_results = $this->create_murders_from_stmt_results( $this->get_murder_by_age_stmt );
-		return $this->murder_results;
+		$murder_results = $this->create_murders_from_stmt_results( $this->get_murder_by_age_stmt );
+		return $murder_results;
 	}
 
 
@@ -130,24 +130,45 @@ class MySQLMurderManager implements MurderManager
 	{
 		$this->address = $address;
 		$this->get_murder_by_address_stmt->execute();
-		$this->murder_results = $this->create_murders_from_stmt_results( $this->get_murder_by_address_stmt );
-		return $this->murder_results;
+		$murder_results = $this->create_murders_from_stmt_results( $this->get_murder_by_address_stmt );
+		return $murder_results;
 	}
 
 	public function get_murders_by_cause( $cause )
 	{
 		$this->cause = $cause;
 		$this->get_murder_by_cause_stmt->execute();
-		$this->murder_results = $this->create_murders_from_stmt_results( $this->get_murder_by_cause_stmt );
-		return $this->murder_results;
+		$murder_results = $this->create_murders_from_stmt_results( $this->get_murder_by_cause_stmt );
+		return $murder_results;
 	}
 
 	public function get_murders_by_comment( $comment )
 	{
 		$this->comment = $comment;
 		$this->get_murder_by_comment_stmt->execute();
-		$this->murder_results = $this->create_murders_from_stmt_results( $this->get_murder_by_comment_stmt );
-		return $this->murder_results;
+		$murder_results = $this->create_murders_from_stmt_results( $this->get_murder_by_comment_stmt );
+		return $murder_results;
+	}
+
+	public function get_all()
+	{
+		$this->get_all_stmt->execute();
+		$murder_results = $this->create_murders_from_stmt_results($this->get_all_stmt);
+		return $murder_results;
+	}
+
+
+
+	public function save(Murder $m)
+	{
+		$this->id = $m->get_id();
+		$this->name = $m->get_name();
+		$this->age = $m->get_age();
+		$this->address = $m->get_address();
+		$this->cause = $m->get_cause();
+		$this->comment = $m->get_comment();
+
+		$this->save_stmt->execute();
 	}
 
 }
