@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Crime Seen</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/custom.css">
+		
+        <style>
+            body {
+                padding-top: 100px;
+                padding-bottom: 50px;
+				background-image: url(img/cross.jpg);
+ 				background-repeat: no-repeat;
+ 				background-attachment: fixed;
+				background-size:cover;
+            }
+        </style>
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    </head>
+    <body>
+		<div class=" jumbotron">
+			<div class="col-xs-2">
+					<img src="img/cslogo.png" class="img-responsive"/>
+					<br>
+					<ul class="nav nav-pills nav-stacked">
+					  <li class="active"><a href="#home" data-toggle="tab"><center>Home</center></a></li>
+					  <li><a href="#contact" data-toggle="tab"><center>Contact Us</center></a></li>
+					  <li><a href="#analytics" data-toggle="tab"><center>Analytics</center></a></li>
+					  <li><a href="#database" data-toggle="tab"><center>Incident Database</center></a></li>
+					  <li><a data-toggle="modal" data-target="#loginModal"><center>Sign In/Register</center></a></li>
+					</ul>
+			</div>
+			
+			<div class="container jumbotron tab-content">
+				<div class="tab-pane fade active in" id="home">
+					<div class="col-xs-5">
+							<link href="http://fonts.googleapis.com/css?family=Open+Sans:500,400,300" rel="stylesheet" type="text/css">
+							<ul class="gNow">
+								<li>
+									<div class="card">
+										<p class="card-title">Welcome To</p>
+										<img src="img/cslogo.png" class="img-responsive"/>
+										<p>Crime seen is your crime statistical web portal!</p>
+										<p class="url"><a href="#">About Us</a></p>
+									</div>
+								</li>
+								<li>
+									<div class="card">
+										<p class="card-title">Incident Database</p>
+										<img src="img/tables.png" class="img-responsive"/>
+										<p>View our full repository of murder records!</p>
+										<p class="url"><a href="#">Click Here</a></p>
+									</div>
+								</li>
+								
+							</ul>
+						</div>
+					<div class="col-xs-5">
+							<ul class="gNow">
+								<li>
+									<div class="card">
+										<p class="card-title">Analytics</p>
+										<img src="img/chart.jpg" class="img-responsive"/>
+										<p>Data visulizers for murder statistics.</p>
+										<p class="url"><a href="#"> Click Here</a></p>
+									</div>
+								</li>
+								<li>
+									<div class="card">
+										<p class="card-title">Register</p>
+										<p>Register, though really I don't know why you would...</p>
+										<p class="url"><a href="#">Click Here</a></p>
+									</div>
+								</li>
+							</ul>
+						</div>
+				</div>
+				<div class="tab-pane fade" id="contact">
+					<div class="col-xs-5">
+						<div class="card">
+							
+							<div class="row" id="contact-row">
+								<div class="container">
+									<form>
+										<fieldset>
+											<legend class="card-title">Leave us a Message</legend>
+											<div class="row">
+												  <div class="col-md-10">
+													  <div class="form-group">
+														<label>Email address</label>
+														<input type="email" class="form-control" placeholder="Email">
+													  </div>
+													  <div class="form-group">
+														<label>Name</label>
+														<input type="text" class="form-control" placeholder="Name">
+													  </div>
+												  </div>
+
+												  <div class="col-md-10">
+													<div class="form-group">
+														<label>Message</label>
+														<textarea class="form-control" rows="5"></textarea>
+													</div>
+												  </div>
+											</div>
+
+											<div class="row btn-row">
+												<div class="col-md-4">
+													<button type="submit" class="btn btn-default form-control">Submit</button>
+												</div>
+											</div>
+										</fieldset>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="card">
+							<fieldset>
+											<legend class="card-title">Locations</legend>
+											<div class="row" style="padding-top:20px;">
+												<ol>
+													<li>8 Pond Street, Beaulieu Gardens, Trincity, TT, (868) 640-9876</li>
+													<li>65, Charlotte Street,Port-of-Spain, TT, (868) 621-1235</li>
+													<li>243 Circular Road, St. Augustine, TT, (868) 662-6473</li>
+													<li>13 Rushworth Street, San Fernando, TT,(868) 667-8888</li>
+												</ol>
+											</div>
+										</fieldset>
+						</div>
+					</div>
+				</div>
+				<div class="tab-pane fade" id="analytics">
+					<h1>Analytics</h1>
+				</div>
+				<div class="tab-pane fade" id="database">
+					<h1>Database</h1>
+				</div>	
+			</div>
+		
+		</div>
+		
+		<!-- Start of modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content my-modal">
+
+          <!-- Start of modal header -->
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+              &times;
+            </button>
+            <h4 class="modal-title">
+              CrimeSeen Registration
+            </h4>
+          </div>
+          <!-- End of modal header -->
+
+
+
+		<!-- Start of modal form -->
+		<form role="form" id="regform">
+            
+			<!-- Modal Body -->
+            <div class="modal-body">
+				<div class="container">
+					<div class="row">
+                  
+						<!-- Left side of modal form -->
+						<div class="col-md-10">
+							<div class="form-group">
+								<label>
+									Username
+								</label>
+								<input type="text" class="form-control modal-input" placeholder="Username" required>
+							</div>
+							<div class="form-group">
+								<label>
+									Email Address
+								</label>
+								<input type="email" class="form-control modal-input" placeholder="Email Address" required>
+							</div>
+							<div class="form-group">
+								<label>
+									Password
+								</label>
+								<input type="password" id="password" class="form-control modal-input password" placeholder="Password" required>
+							</div>
+							<div class="form-group">
+								<label>
+									Confirm Password
+								</label>
+								<input type="password" id="password-confirm" class="form-control modal-input password" placeholder="Confirm Password" required>
+							</div>
+							<div class="alert alert-danger" id="password-confirm-failed">
+								<a href="#" class="alert-link">
+									Passwords don't match!
+								</a>
+							</div>
+						</div>
+						<!--End of left modal form-->
+                  
+						<!-- Right side of the modal form -->
+						<div class="col-md-10">
+							<div class="form-group">
+								<label>
+									Choose Gender
+								</label>
+									<select name="Gender" class="form-control">
+										<option value="male">Male</option>
+										<option value="saab">Female</option>
+          							</select>						
+          					</div>
+							<div class="form-group">
+								<label>
+									Describe Yourself
+								</label>
+								<textarea placeholder="Description of yourself" class="form-control"></textarea>
+							</div>
+							<div class="form-group">
+								<label>
+									Profile Picture
+								</label>
+								<input type="file" id="display-pic-upload">
+							</div>
+          					<div class = "form-group">
+          						<input type="checkbox" name="emailReceives" value="emailReceives">  
+          						<span>Would you like to receive emails from us?</span>
+          					</div>
+						</div>
+						<!-- End of the right side of the modal form -->
+                  
+					</div>
+				</div>
+            </div>
+            <!-- End of modal body -->
+            
+            
+            <!-- modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">
+                Close
+              </button> 
+              <input type="submit" value="Submit" class="btn btn-primary">
+            </div>
+            <!-- modal footer end -->
+
+          </form>
+          <!-- End of modal form -->
+
+        </div>
+      </div>
+    </div>
+    <!-- End of modal -->
+
+
+<!-- Start of login modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content my-modal">
+
+				<!-- Start of modal header -->
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+						&times;
+					</button>
+					<h4 class="modal-title">
+						CrimeSeen Login
+					</h4>
+				</div>
+				<!-- End of modal header -->
+
+
+
+				<!-- Start of Login modal form -->
+				<form role="form" id="loginform">
+            
+					<!-- Modal Body -->
+					<div class="modal-body">
+						<div class="container">
+							<div class="row">
+                  
+								<!-- Left side of modal form -->
+								<div class="col-md-10">
+									<div class="form-group">
+										<label>
+											Username
+										</label>
+										<input type="text" class="form-control modal-input" placeholder="Username" required>
+									</div>
+									<div class="form-group">
+										<label>
+											Password
+										</label>
+										<input type="password" id="password_login" class="form-control modal-input password" placeholder="Password" required>
+									</div>
+									<div class="form-group">
+										<span>Don't have an account yet?<a data-toggle="modal" data-target="#myModal" data-dismiss="modal">Register Here</a></span>
+									</div>
+								</div>
+							<!--End of left modal form-->
+							</div>
+						</div>
+					</div>
+					<!-- End of modal body -->
+            
+            
+					<!-- modal footer -->
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">
+							Close
+						</button> 
+						<input type="submit" value="Submit" class="btn btn-primary">
+					</div>
+					<!-- modal footer end -->
+
+				</form>
+				<!-- End of modal form -->
+
+			</div>
+		</div>
+    </div>
+    <!-- End of modal -->
+		
+<!--
+		<div class="row">
+			<hr>
+		  	<footer>
+				<p>&copy; Agri-Gate Industries</p>
+		  	</footer>
+		</div>
+-->
+		<script src="js/vendor/jquery-1.10.1.min.js"></script>
+        <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
