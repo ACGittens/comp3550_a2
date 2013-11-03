@@ -50,19 +50,19 @@ class MySQLMurderManager implements MurderManager
         $this->get_murder_by_id_stmt = $this->mysqli->prepare("SELECT".$this->columns."FROM".$this->table."WHERE id=?");
         $this->get_murder_by_id_stmt->bind_param("d",$this->id);
 
-        $this->get_murder_by_name_stmt = $this->mysqli->prepare("SELECT".$this->columns."FROM".$this->table."WHERE name=?");
+        $this->get_murder_by_name_stmt = $this->mysqli->prepare("SELECT".$this->columns."FROM".$this->table."WHERE name LIKE ?");
         $this->get_murder_by_name_stmt->bind_param("s",$this->name);
 
         $this->get_murder_by_age_stmt = $this->mysqli->prepare("SELECT".$this->columns."FROM".$this->table."WHERE age=?");
         $this->get_murder_by_age_stmt->bind_param("d",$this->age);
         
-        $this->get_murder_by_address_stmt = $this->mysqli->prepare("SELECT".$this->columns."FROM".$this->table."WHERE address=?");
+        $this->get_murder_by_address_stmt = $this->mysqli->prepare("SELECT".$this->columns."FROM".$this->table."WHERE address lIKE ?");
         $this->get_murder_by_address_stmt->bind_param("s",$this->address);
         
-        $this->get_murder_by_cause_stmt = $this->mysqli->prepare("SELECT".$this->columns."FROM".$this->table."WHERE cause=?");
+        $this->get_murder_by_cause_stmt = $this->mysqli->prepare("SELECT".$this->columns."FROM".$this->table."WHERE cause LIKE ?");
         $this->get_murder_by_cause_stmt->bind_param("s",$this->cause);
         
-        $this->get_murder_by_comment_stmt = $this->mysqli->prepare("SELECT".$this->columns."FROM".$this->table."WHERE comment=?");
+        $this->get_murder_by_comment_stmt = $this->mysqli->prepare("SELECT".$this->columns."FROM".$this->table."WHERE comment LIKE ?");
         $this->get_murder_by_comment_stmt->bind_param("s",$this->comment);
 
         $this->get_all_stmt = $this->mysqli->prepare("SELECT".$this->columns."FROM".$this->table);
