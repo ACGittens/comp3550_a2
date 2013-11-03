@@ -6,8 +6,14 @@ require_once('MySQLMurderManager.php');
 
 Murder::set_murder_manager( new MySQLMurderManager );
 
-$m = new Murder('jarred',20,'flatland','knife','multiple stab wounds');
-$m->save();
+// $m = new Murder('jarred',20,'flatland','knife','multiple stab wounds');
+// $m->save();
 
+
+$murder_results = Murder::get_murders_by_name("jarred");
+foreach( $res in $murder_results )
+{
+	echo $res->get_age()."\n";
+}
 
 ?>
