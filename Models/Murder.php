@@ -3,7 +3,7 @@
 require_once('Model.php');
 define("INVALID_ID",0);
 
-class Murder implements Model
+class Murder extends Model
 {
 	private $id;
 	private $name;

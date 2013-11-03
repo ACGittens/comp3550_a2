@@ -10,10 +10,10 @@ Murder::set_murder_manager( new MySQLMurderManager );
 // $m->save();
 
 
-$murder_results = Murder::get_murders_by_name("jarred");
+$murder_results = Murder::get_all();
 foreach( $murder_results as $res )
 {
-	echo $res->get_age()."\n";
+	echo $res->get_details()."\n";
 }
 
 ?>

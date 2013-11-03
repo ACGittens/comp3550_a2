@@ -18,7 +18,7 @@ $users = User::get_all();
 
 foreach($users as $user)
 {
-    $user->print_details();
+    $user->get_details();
 }
 
 //$u = User::get_user_by_id(16);

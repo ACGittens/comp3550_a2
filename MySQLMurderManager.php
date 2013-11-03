@@ -95,7 +95,7 @@ class MySQLMurderManager implements MurderManager
 		$murder_results = array();
         while( $stmt->fetch()  )
         {
-            $new_murder = Murder::_create_murder( $this->rd, $this->rname, $this->rage,
+            $new_murder = Murder::_create_murder( $this->rid, $this->rname, $this->rage,
                                            $this->raddress, $this->rcause, $this->rcomment);
             
             $murder_results[] = $new_murder;

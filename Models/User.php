@@ -3,7 +3,7 @@
 require_once('Model.php');
 define("INVALID_ID",0);
 
-class User implements Model
+class User extends Model
 {
     private $id;
     private $email;
@@ -153,11 +153,11 @@ class User implements Model
     }
     
     
-    function print_details()
-    {
-        printf("Id: %d\nEmail: %s\nHash: %s\nFirst name: %s\nLast Name: %s\n\n",
-              $this->get_id(), $this->get_email(), $this->get_hash(), $this->get_first_name(), $this->get_last_name());
-    }
+    // function get_details()
+    // {
+    //     $details = sprintf("Id: %d\nEmail: %s\nHash: %s\nFirst name: %s\nLast Name: %s\n\n",
+    //           $this->get_id(), $this->get_email(), $this->get_hash(), $this->get_first_name(), $this->get_last_name());
+    // }
 }
 
 ?>
