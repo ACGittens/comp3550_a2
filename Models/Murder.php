@@ -24,64 +24,64 @@ class Murder implements Model
 	}
 
 
-	public static set_murder_manager( $murder_manager )
+	public static function set_murder_manager( $murder_manager )
 	{
 		Murder::$murder_manager = $murder_manager;
 	}
 
 
-	public static get_murder_by_id( $id )
+	public static function get_murder_by_id( $id )
 	{
 		$murder = Murder::$murder_manager->get_murder_by_id($id);
 		return $id;
 	}
 
-	public static get_murders_by_name( $name )
+	public static function get_murders_by_name( $name )
 	{
 		$murders = Murder::$murder_manager->get_murders_by_name($name);
 		return $murders;
 	}
 
-	public static get_murders_by_age( $age )
+	public static function get_murders_by_age( $age )
 	{
 		$murders = Murder::$murder_manager->get_murders_by_age($age);
 		return $murders;
 	}
 
-	public static get_murders_by_address($address)
+	public static function get_murders_by_address($address)
 	{
 		$murders = Murder::$murder_manager->get_murders_by_address($address);
 		return $murders;
 	}
 
 
-	public static get_murders_by_cause($cause)
+	public static function get_murders_by_cause($cause)
 	{
 		$murders = Murder::$murder_manager->get_murders_by_cause($cause);
 		return $murders;
 	}
 
-	public static get_murders_by_comment($comment)
+	public static function get_murders_by_comment($comment)
 	{
 		$murders = Murder::$murder_manager->get_murders_by_comment($comment);
 		return $murders;
 	}
 
 
-	public static get_all()
+	public static function get_all()
 	{
 		$murders = Murder::$murder_manager->get_all();
 		return $murders;
 	}
 
-	public static create_murder( $name, $age, $address, $cause, $comment )
+	public static function create_murder( $name, $age, $address, $cause, $comment )
 	{
 		$new_murder = Murder($name,$age,$address,$cause,$comment);
 		$new_murder->set_id(INVALID_ID);
 		return $new_murder;
 	}
 
-	public static _create_murder( $id, $name, $age, $address, $cause, $comment )
+	public static function _create_murder( $id, $name, $age, $address, $cause, $comment )
 	{
 		$new_murder = Murder::create_murder($name,$age,$address,$cause,$comment);
 		$new_murder->set_id($id);
