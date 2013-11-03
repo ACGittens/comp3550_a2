@@ -1,8 +1,9 @@
 <?php
 
+require_once('Model.php');
 define("INVALID_ID",0);
 
-class User
+class User implements Model
 {
     private $id;
     private $email;
