@@ -29,11 +29,16 @@ class MySQLMurderManager implements MurderManager
 
 	private $mysqli;
 
-    $columns = " id,name,age,address,cause,comment ";
-    $table = " crime ";
+    private $columns;
+    private $table;
 
 	public function __construct()
 	{
+
+		$this->columns = " id,name,age,address,cause,comment ";
+		$this->table = " crime ";
+
+
 		global $CFG;
 		$this->mysqli = new mysqli($CFG['location'],$CFG['username'],$CFG['password'],$CFG['database']);
         if ($this->mysqli->connect_errno)
