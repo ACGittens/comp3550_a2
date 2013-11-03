@@ -11,7 +11,7 @@ Murder::set_murder_manager( new MySQLMurderManager );
 
 
 $murder_results = Murder::get_murders_by_name("jarred");
-foreach( $res in $murder_results )
+foreach( $murder_results as $res )
 {
 	echo $res->get_age()."\n";
 }
