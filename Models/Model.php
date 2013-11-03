@@ -8,10 +8,12 @@ abstract class Model
 	{
 		$output = "";
 		$model_properties = get_class_vars( get_class($this) );
-		foreach( $model_properties as $name=>$value )
-		{
-			$output .= $name.": ".$value."\n";
-		}
+		echo "Class: ".get_class($this)."\n";
+		var_dump($model_properties);
+		// foreach( $model_properties as $name=>$value )
+		// {
+		// 	$output .= $name.": ".$value."\n";
+		// }
 		return $output;
 	}
 }
